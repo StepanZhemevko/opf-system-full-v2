@@ -1,0 +1,12 @@
+# API
+- POST /auth/register
+- POST /auth/login
+- GET /auth/me
+- POST /systems
+- GET /systems
+- GET /systems/{id}
+- POST /systems/{id}/validate
+- POST /optimization/run
+- GET /optimization/history
+- GET /optimization/history/{id}
+- GET /health

@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: opfdb
+      POSTGRES_USER: opfuser
+      POSTGRES_PASSWORD: opfpassword
+    ports: ["5432:5432"]
+  backend:
+    build: ./backend
+    env_file: ./backend/.env.example
+    ports: ["8000:8000"]
+    depends_on: [db]
+  frontend:
+    build: ./frontend
+    ports: ["5173:5173"]
+    depends_on: [backend]
