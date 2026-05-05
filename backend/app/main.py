@@ -3,11 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.app.api.auth import router as auth_router
 from backend.app.api.systems import router as systems_router
 from backend.app.api.optimization import router as optimization_router
-from backend.app.core.config import settings
 from backend.app.core.database import Base, engine
-from backend.app.models.user import User
-from backend.app.models.energy_system import EnergySystem
-from backend.app.models.optimization_run import OptimizationRun
+
 
 Base.metadata.create_all(bind=engine)
 
